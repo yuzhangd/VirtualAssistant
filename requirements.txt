@@ -1,0 +1,11 @@
+beautifulsoup4==4.6.0
+certifi==2018.4.16
+chardet==3.0.4
+idna==2.6
+PyAudio==0.2.11
+-e git+https://github.com/jtasker/python-weather-api@cf79f478c26dd244e0c90e10d6df91bb4ea8cd5e#egg=pywapi
+PyYAML==3.12
+requests==2.18.4
+SpeechRecognition==3.8.1
+urllib3==1.22
+wikipedia==1.4.0

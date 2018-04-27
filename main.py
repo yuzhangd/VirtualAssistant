@@ -14,6 +14,7 @@ profile.close()
 # functioning variablea
 name = profile_data['name']
 city_name = profile_data['city_name']
+city_code = profile_data['city_code']
 
 # welcome message
 tts('Welcome ' + name + ' systems are now ready to run. How can I help you?')
@@ -35,7 +36,7 @@ def main():
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
     
     # call brain
-    brain(name, speech_text)
+    brain(name, speech_text, city_name, city_code)
 
 main()
       

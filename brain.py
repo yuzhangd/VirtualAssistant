@@ -1,7 +1,7 @@
 
-from GreyMatter import general_conversations, tell_time
+from GreyMatter import general_conversations, tell_time, weather, define_subject
 
-def brain(name, speech_text):
+def brain(name, speech_text,city_name, city_code):
     
     def check_message(check):
         """
@@ -37,6 +37,13 @@ def brain(name, speech_text):
     # check time
     elif check_message(['time']):
         tell_time.what_is_time()
+        
+    # check weather
+    elif check_message(['how', 'weather']) or check_message(['hows', 'weather']):
+        weather.weather(city_name, city_code)
+    
+    elif check_message(['define']):
+        define_subject.define_subject(speech_text)
 
 
     else:
