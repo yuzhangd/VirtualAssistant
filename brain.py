@@ -1,5 +1,6 @@
 
-from GreyMatter import general_conversations, tell_time, weather, define_subject
+from GreyMatter import general_conversations, tell_time,\
+                       weather, define_subject, notes
 
 def brain(name, speech_text,city_name, city_code):
     
@@ -44,7 +45,14 @@ def brain(name, speech_text,city_name, city_code):
     
     elif check_message(['define']):
         define_subject.define_subject(speech_text)
+    
+    # take notes
+    elif check_message(['note']):
+        notes.note_something(speech_text)
 
+    # dictate all notes
+    elif check_message(['all', 'notes','you']) or check_message(['notes']):
+        notes.show_all_notes()
 
     else:
         general_conversations.undefine()
