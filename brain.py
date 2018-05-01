@@ -1,8 +1,8 @@
 
 from GreyMatter import general_conversations, tell_time,\
-                       weather, define_subject, notes
+                       weather, define_subject, notes, open_firefox, sleep
 
-def brain(name, speech_text,city_name, city_code):
+def brain(name, speech_text,city_name, city_code, proxy_username, proxy_password):
     
     def check_message(check):
         """
@@ -53,6 +53,14 @@ def brain(name, speech_text,city_name, city_code):
     # dictate all notes
     elif check_message(['all', 'notes','you']) or check_message(['notes']):
         notes.show_all_notes()
+        
+    elif check_message(['open', 'firefox']):
+        open_firefox.open_firefox()
+    
+    elif check_message(['sleep']):
+        sleep.go_to_sleep()
+
+
 
     else:
         general_conversations.undefine()
